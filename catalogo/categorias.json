@@ -1,0 +1,13 @@
+[
+  { "id": "mobiliario", "nombre": "Mobiliario de producción", "orden": 1 },
+  { "id": "articulos-de-oficina", "nombre": "Artículos de oficina", "orden": 2 },
+  { "id": "cajas-plasticas", "nombre": "Cajas plásticas", "orden": 3 },
+  { "id": "muebles-para-decoracion", "nombre": "Muebles para decoración", "orden": 4 },
+  { "id": "toldas", "nombre": "Toldas", "orden": 5 },
+  { "id": "ventilacion-y-enfriamiento", "nombre": "Ventilación y enfriamiento", "orden": 6 },
+  { "id": "electricidad-y-luces", "nombre": "Electricidad y luces", "orden": 7 },
+  { "id": "comunicacion", "nombre": "Comunicación", "orden": 8 },
+  { "id": "utileria", "nombre": "Utilería", "orden": 9 },
+  { "id": "varios", "nombre": "Varios", "orden": 10 },
+  { "id": "vestuario", "nombre": "Vestuario", "orden": 11 }
+]

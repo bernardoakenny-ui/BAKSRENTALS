@@ -1,0 +1,7 @@
+{
+  "nombre": "Antena Starlink",
+  "descripcion": "Sistema de comunicación inalámbrica para producciones y equipos de rodaje con activación y renta diaria o semanal.",
+  "precioDiario": 25,
+  "precioSemanal": 100,
+  "precioActivacion": 105
+}
