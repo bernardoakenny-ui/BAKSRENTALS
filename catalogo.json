@@ -736,6 +736,19 @@
     "images": []
   },
   {
+    "id": "vestuario/ganchos-para-pantalones",
+    "category": "vestuario",
+    "categoryLabel": "Vestuario",
+    "slug": "ganchos-para-pantalones",
+    "name": "Ganchos para pantalones",
+    "description": "Set de ganchos para pantalones para organización de vestuario, maquillaje y backstage durante producciones y eventos.",
+    "daily": 8,
+    "weekly": 30,
+    "activationFee": 0,
+    "includes": "",
+    "images": []
+  },
+  {
     "id": "vestuario/plancha",
     "category": "vestuario",
     "categoryLabel": "Vestuario",
