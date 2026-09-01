@@ -352,7 +352,7 @@
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "m",
     "color": null,
     "images": []
   },
@@ -405,7 +405,7 @@
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "m",
     "color": null,
     "images": []
   },
@@ -922,7 +922,7 @@
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "16",
     "color": null,
     "images": []
   },
@@ -1013,10 +1013,10 @@
     "weekly": 65,
     "activationFee": 0,
     "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
+    "gender": "hombre",
+    "type": "camisa",
+    "size": "m",
+    "color": "azul",
     "images": []
   },
   {
@@ -1030,10 +1030,10 @@
     "weekly": 70,
     "activationFee": 0,
     "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
+    "gender": "mujer",
+    "type": "pantalon",
+    "size": "l",
+    "color": "negro",
     "images": []
   },
   {
@@ -1047,10 +1047,10 @@
     "weekly": 58,
     "activationFee": 0,
     "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
+    "gender": "nino",
+    "type": "camisa",
+    "size": "s",
+    "color": "blanco",
     "images": []
   },
   {
@@ -1064,10 +1064,10 @@
     "weekly": 60,
     "activationFee": 0,
     "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
+    "gender": "nina",
+    "type": "falda",
+    "size": "xs",
+    "color": "rosa",
     "images": []
   }
 ]

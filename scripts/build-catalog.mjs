@@ -11,15 +11,19 @@ const genderMap = { hombre: 'ropa-hombre', mujer: 'ropa-mujer', nino: 'ropa-nino
 const apparelTokens = ['camisa', 'pantalon', 'pantalón', 'falda', 'vestido', 'blusa', 'chaqueta', 'abrigo', 'saco', 'polera', 'short', 'jean', 'jogger', 'overol', 'jumper'];
 const sizeTokens = ['xs', 's', 'm', 'l', 'xl', 'xxl', '6', '8', '10', '12', '14', '16', '18'];
 const colorTokens = ['blanco', 'negro', 'azul', 'rojo', 'rosa', 'verde', 'gris', 'beige', 'marron', 'cafe', 'plateado', 'dorado', 'amarillo', 'turquesa', 'celeste', 'morado', 'violeta'];
-const parseFileMetadata = fileName => {
-  const cleanName = fileName.replace(/\.[^.]+$/, '').toLowerCase();
-  const tokens = cleanName.replace(/[_]+/g, ' ').split(/[^a-z0-9]+/).filter(Boolean);
+const parseMetadataFromText = value => {
+  const cleanName = String(value || '').toLowerCase().replace(/\.[^.]+$/, '').replace(/[_]+/g, ' ');
+  const tokens = cleanName.split(/[^a-z0-9]+/).filter(Boolean);
   const genderToken = tokens.find(token => Object.hasOwn(genderMap, token));
   const gender = genderToken ? genderMap[genderToken] : null;
   const size = tokens.find(token => sizeTokens.includes(token)) || null;
   const color = tokens.find(token => colorTokens.includes(token)) || null;
   const type = tokens.find(token => apparelTokens.includes(token)) || null;
   return { gender, size, color, type };
+};
+const parseFileMetadata = fileName => {
+  if (!fileName) return { gender: null, size: null, color: null, type: null };
+  return parseMetadataFromText(fileName);
 };
 const categories = (await readdir(root, { withFileTypes: true }))
   .filter(entry => entry.isDirectory())
@@ -35,7 +39,8 @@ for (const category of categories) {
     const fields = JSON.parse(await readFile(join(productPath, 'producto.json'), 'utf8'));
     const images = files.filter(file => imageExtensions.has(file.slice(file.lastIndexOf('.')).toLowerCase()));
     const firstImage = images[0] || '';
-    const fileMetadata = parseFileMetadata(firstImage);
+    const metadataSource = firstImage || `${folder.name} ${fields.nombre || ''}`;
+    const fileMetadata = parseFileMetadata(metadataSource);
     const derivedCategory = category.name === 'vestuario' && fileMetadata.gender ? fileMetadata.gender : category.name;
     const derivedCategoryLabel = settingsById.get(derivedCategory)?.nombre || settingsById.get(category.name)?.nombre || category.name;
     products.push({

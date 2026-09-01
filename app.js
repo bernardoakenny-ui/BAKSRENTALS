@@ -5,13 +5,14 @@ const quoteDialog = document.querySelector('#quote-form-dialog');
 let catalog = [];
 let activeCategory = 'all';
 let activeCatalogMode = 'produccion';
-let activeFilters = { genero: 'all', tipo: 'all', talla: 'all', color: 'all' };
+let activeFilters = { tipo: 'all', talla: 'all', color: 'all' };
 let cart = JSON.parse(localStorage.getItem('baks-cart') || '[]').map(item => ({ ...item, duration: Number(item.duration) || 1 }));
 const catalogModes = {
   produccion: { label: 'Producción', categories: ['mobiliario', 'articulos-de-oficina', 'cajas-plasticas', 'toldas', 'ventilacion-y-enfriamiento', 'electricidad-y-luces', 'comunicacion', 'varios'] },
   arte: { label: 'Arte', categories: ['muebles-para-decoracion', 'utileria', 'cajas-plasticas'] },
   vestuario: { label: 'Vestuario', categories: ['vestuario', 'ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina', 'cajas-plasticas'] }
 };
+const clothingCategories = new Set(['ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina']);
 const getModeCatalog = () => {
   const categories = catalogModes[activeCatalogMode]?.categories || [];
   if (!categories.length) return [];
@@ -20,12 +21,12 @@ const getModeCatalog = () => {
     .filter(product => categories.includes(product.category))
     .sort((a, b) => (categoryOrder.get(a.category) ?? 999) - (categoryOrder.get(b.category) ?? 999));
 };
+const showClothingFilters = () => activeCatalogMode === 'vestuario' && activeCategory !== 'all' && clothingCategories.has(activeCategory);
 const matchesFilters = product => {
-  const matchesGenero = activeFilters.genero === 'all' || (product.gender || 'all') === activeFilters.genero;
   const matchesTipo = activeFilters.tipo === 'all' || (product.type || 'all') === activeFilters.tipo;
   const matchesTalla = activeFilters.talla === 'all' || (product.size || 'all') === activeFilters.talla;
   const matchesColor = activeFilters.color === 'all' || (product.color || 'all') === activeFilters.color;
-  return matchesGenero && matchesTipo && matchesTalla && matchesColor;
+  return matchesTipo && matchesTalla && matchesColor;
 };
 const normalizeFilterValue = value => String(value || '').toLowerCase().replace(/\s+/g, '-');
 const getFilterOptions = (products, key) => {
@@ -94,9 +95,8 @@ function renderProducts(){ const products = getModeCatalog(); const byCategory =
   container.querySelectorAll('[data-product-plus]').forEach(button => button.addEventListener('click', () => updateCart(button.dataset.id, 1))); container.querySelectorAll('[data-product-minus]').forEach(button => button.addEventListener('click', () => { if (getCartItem(button.dataset.id)) updateCart(button.dataset.id, -1); })); container.querySelectorAll('[data-product-period]').forEach(select => select.addEventListener('change', () => updateCart(select.dataset.id, 0, select.value))); container.querySelectorAll('[data-product-duration]').forEach(input => input.addEventListener('change', () => updateCart(input.dataset.id, 0, null, input.value))); container.querySelectorAll('.product-visual img').forEach(image => image.addEventListener('click', () => openImageModal(image.src))); container.querySelectorAll('.add-product').forEach(button => button.addEventListener('click', () => { if (!getCartItem(button.dataset.id)) updateCart(button.dataset.id, 1); openQuote(); })); }
 function renderTabs(){ const modeProducts = getModeCatalog(); if (!modeProducts.length) { document.querySelector('#category-tabs').innerHTML = '<p class="empty">Próximamente: este catálogo estará disponible.</p>'; return; } const categoryOrder = catalogModes[activeCatalogMode]?.categories || []; const groups = categoryOrder
     .filter(categoryId => modeProducts.some(product => product.category === categoryId))
-    .map(categoryId => [categoryId, catalog.find(product => product.category === categoryId)?.categoryLabel || categoryId]); const tabs = [['all','Todo'], ...groups]; const filters = activeCatalogMode === 'vestuario' ? `
+    .map(categoryId => [categoryId, catalog.find(product => product.category === categoryId)?.categoryLabel || categoryId]); const tabs = [['all','Todo'], ...groups]; const filters = showClothingFilters() ? `
       <div class="catalog-filters">
-        <label><span>Género</span><select data-filter="genero"><option value="all">Todos</option>${getFilterOptions(modeProducts, 'gender').map(value => `<option value="${safe(value)}" ${activeFilters.genero === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
         <label><span>Tipo</span><select data-filter="tipo"><option value="all">Todos</option>${getFilterOptions(modeProducts, 'type').map(value => `<option value="${safe(value)}" ${activeFilters.tipo === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
         <label><span>Talla</span><select data-filter="talla"><option value="all">Todas</option>${getFilterOptions(modeProducts, 'size').map(value => `<option value="${safe(value)}" ${activeFilters.talla === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
         <label><span>Color</span><select data-filter="color"><option value="all">Todos</option>${getFilterOptions(modeProducts, 'color').map(value => `<option value="${safe(value)}" ${activeFilters.color === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
