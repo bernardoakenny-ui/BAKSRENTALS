@@ -10,6 +10,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/bancos-apilables/D_957597-MLM91550205395_092025-O.jpg"
     ]
@@ -25,6 +29,10 @@
     "weekly": 60,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/espejos-maquillaje-chicos/PHOTO-2026-08-05-15-26-38.jpg"
     ]
@@ -40,6 +48,10 @@
     "weekly": 100,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/espejos-maquillaje-grandes/portada.jpg"
     ]
@@ -55,6 +67,10 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/mesas/41nKJ1NCKtL._AC_SL1080.webp"
     ]
@@ -70,6 +86,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "16",
+    "color": null,
     "images": [
       "catalogo/mobiliario/set-camerino/PHOTO-2025-03-20-16-07-44.jpg",
       "catalogo/mobiliario/set-camerino/PHOTO-2026-01-18-15-16-08 2.jpg",
@@ -87,6 +107,10 @@
     "weekly": 80,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/sillas-de-direccion/portada.jpg"
     ]
@@ -102,6 +126,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "14",
+    "color": null,
     "images": [
       "catalogo/mobiliario/sillas-de-direccion-bajas/PHOTO-2025-06-14-09-31-20 2.jpg"
     ]
@@ -117,6 +145,10 @@
     "weekly": 4,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/sillas-plasticas/portada.jpg"
     ]
@@ -132,6 +164,10 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/mobiliario/sillas-tela-negra-bajas/portada.jpg"
     ]
@@ -147,6 +183,10 @@
     "weekly": 45,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -160,6 +200,10 @@
     "weekly": 45,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -173,6 +217,10 @@
     "weekly": 45,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/cajas-plasticas/caja-plastica-grande/Screenshot 2026-08-31 at 7.23.04 PM.png"
     ]
@@ -188,6 +236,10 @@
     "weekly": 48,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/bancas-de-jardin/E92F35BB-E966-4D4A-BF7F-7B45F8B2D8A6.PNG"
     ]
@@ -203,6 +255,10 @@
     "weekly": 72,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/mesa-utilitaria-tipo-bar/D08A3924-9C22-43EB-8519-DD435ED22600.PNG"
     ]
@@ -218,6 +274,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "12",
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/poltronas-de-playa/PHOTO-2025-12-29-18-23-46.jpg"
     ]
@@ -233,6 +293,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/set-de-mesas-y-sillas-de-cafeteria/WhatsApp Image 2026-01-28 at 09.15.39.jpeg"
     ]
@@ -248,6 +312,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/set-de-reposeras-de-playa/WhatsApp Image 2026-01-23 at 19.02.01.jpeg"
     ]
@@ -263,6 +331,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/muebles-para-decoracion/sillas-de-madera/WhatsApp Image 2026-01-23 at 19.02.01 (1).jpeg"
     ]
@@ -278,6 +350,10 @@
     "weekly": 100,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -291,6 +367,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/toldas/tolda-negra-3x3-con-paredes/PHOTO-2026-06-22-09-42-34.jpg"
     ]
@@ -306,6 +386,10 @@
     "weekly": 180,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -319,6 +403,10 @@
     "weekly": 200,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -332,6 +420,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "12",
+    "color": null,
     "images": [
       "catalogo/toldas/tolda-negra-6x3-con-paredes/PHOTO-2025-03-12-17-11-35 2.jpg",
       "catalogo/toldas/tolda-negra-6x3-con-paredes/PHOTO-2025-03-24-12-16-36.jpg",
@@ -349,6 +441,10 @@
     "weekly": 160,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -362,6 +458,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "10",
+    "color": null,
     "images": [
       "catalogo/ventilacion-y-enfriamiento/port-a-cool/PHOTO-2025-03-17-10-48-35.jpg"
     ]
@@ -377,6 +477,10 @@
     "weekly": 100,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -390,6 +494,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "12",
+    "color": null,
     "images": [
       "catalogo/ventilacion-y-enfriamiento/ventilador-industrial de pedestal/PHOTO-2025-08-29-12-49-08.jpg"
     ]
@@ -405,6 +513,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "12",
+    "color": null,
     "images": [
       "catalogo/ventilacion-y-enfriamiento/ventilador-industrial de piso/PHOTO-2025-08-29-12-49-08 3.jpg"
     ]
@@ -420,6 +532,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/ventilacion-y-enfriamiento/ventiladores/portada.jpg"
     ]
@@ -435,6 +551,10 @@
     "weekly": 8,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -448,6 +568,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -461,6 +585,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -474,6 +602,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -487,6 +619,10 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -500,6 +636,10 @@
     "weekly": 400,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -513,6 +653,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -526,6 +670,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -539,6 +687,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -552,6 +704,10 @@
     "weekly": 100,
     "activationFee": 105,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -565,6 +721,10 @@
     "weekly": 100,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/utileria/camaras-de-video-vintage/IMG_5285.jpg"
     ]
@@ -580,6 +740,10 @@
     "weekly": 380,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "s",
+    "color": null,
     "images": [
       "catalogo/utileria/mararas-de-videos-vintage-anos-60/s-l500.png"
     ]
@@ -595,6 +759,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "12",
+    "color": null,
     "images": [
       "catalogo/varios/barreras-de-seguridad/PHOTO-2025-03-09-12-40-56.jpg"
     ]
@@ -610,6 +778,10 @@
     "weekly": 180,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -623,6 +795,10 @@
     "weekly": 100,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -636,6 +812,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/varios/carretilla/4e982356459632803bb566001a5912c124685aa9_HandTools_481872_05.jpg"
     ]
@@ -651,6 +831,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/varios/carretilla-utilitaria/portada.jpg"
     ]
@@ -666,6 +850,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -679,6 +867,10 @@
     "weekly": 0,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "16",
+    "color": null,
     "images": [
       "catalogo/varios/conos/PHOTO-2026-07-16-08-46-22.jpg"
     ]
@@ -694,6 +886,10 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -707,6 +903,10 @@
     "weekly": 120,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -720,6 +920,10 @@
     "weekly": 60,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": []
   },
   {
@@ -733,6 +937,10 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/vestuario/ganchos-de-ropa/ganchos de ropa.webp"
     ]
@@ -748,6 +956,10 @@
     "weekly": 30,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": "6",
+    "color": null,
     "images": [
       "catalogo/vestuario/ganchos-para-pantalones/ganchos-de-madera-para-colgar-pantalones-6-unidades.jpg.webp"
     ]
@@ -763,6 +975,10 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/vestuario/plancha/plancha.jpg"
     ]
@@ -778,8 +994,80 @@
     "weekly": 40,
     "activationFee": 0,
     "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
     "images": [
       "catalogo/vestuario/rack-de-ropa/B-10069C-1.jpg"
     ]
+  },
+  {
+    "id": "ropa-hombre/camisa-hombre-m-azul",
+    "category": "ropa-hombre",
+    "categoryLabel": "Ropa de hombre",
+    "slug": "camisa-hombre-m-azul",
+    "name": "Camisa hombre M azul",
+    "description": "Prenda de ropa para hombre, ideal para personajes y producción de vestuario.",
+    "daily": 18,
+    "weekly": 65,
+    "activationFee": 0,
+    "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
+    "images": []
+  },
+  {
+    "id": "ropa-mujer/pantalon-mujer-l-negro",
+    "category": "ropa-mujer",
+    "categoryLabel": "Ropa de mujer",
+    "slug": "pantalon-mujer-l-negro",
+    "name": "Pantalón mujer L negro",
+    "description": "Pantalón para mujer en negro, apto para producción y wardrobe.",
+    "daily": 20,
+    "weekly": 70,
+    "activationFee": 0,
+    "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
+    "images": []
+  },
+  {
+    "id": "ropa-nino/camisa-nino-s-blanco",
+    "category": "ropa-nino",
+    "categoryLabel": "Ropa de niño",
+    "slug": "camisa-nino-s-blanco",
+    "name": "Camisa niño S blanco",
+    "description": "Prenda de vestir para niño en blanco, ideal para uso de personaje o producción.",
+    "daily": 16,
+    "weekly": 58,
+    "activationFee": 0,
+    "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
+    "images": []
+  },
+  {
+    "id": "ropa-nina/falda-nina-xs-rosa",
+    "category": "ropa-nina",
+    "categoryLabel": "Ropa de niña",
+    "slug": "falda-nina-xs-rosa",
+    "name": "Falda niña XS rosa",
+    "description": "Falda para niña en rosa, ideal para styling y vestuario de producción.",
+    "daily": 17,
+    "weekly": 60,
+    "activationFee": 0,
+    "includes": "",
+    "gender": null,
+    "type": null,
+    "size": null,
+    "color": null,
+    "images": []
   }
 ]

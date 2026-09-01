@@ -9,5 +9,9 @@
   { "id": "comunicacion", "nombre": "Comunicación", "orden": 8 },
   { "id": "utileria", "nombre": "Utilería", "orden": 9 },
   { "id": "varios", "nombre": "Varios", "orden": 10 },
-  { "id": "vestuario", "nombre": "Vestuario", "orden": 11 }
+  { "id": "vestuario", "nombre": "Vestuario", "orden": 11 },
+  { "id": "ropa-hombre", "nombre": "Ropa de hombre", "orden": 12 },
+  { "id": "ropa-mujer", "nombre": "Ropa de mujer", "orden": 13 },
+  { "id": "ropa-nino", "nombre": "Ropa de niño", "orden": 14 },
+  { "id": "ropa-nina", "nombre": "Ropa de niña", "orden": 15 }
 ]
