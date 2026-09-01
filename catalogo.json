@@ -733,7 +733,9 @@
     "weekly": 20,
     "activationFee": 0,
     "includes": "",
-    "images": []
+    "images": [
+      "catalogo/vestuario/ganchos-de-ropa/ganchos de ropa.webp"
+    ]
   },
   {
     "id": "vestuario/ganchos-para-pantalones",
@@ -746,7 +748,9 @@
     "weekly": 30,
     "activationFee": 0,
     "includes": "",
-    "images": []
+    "images": [
+      "catalogo/vestuario/ganchos-para-pantalones/ganchos-de-madera-para-colgar-pantalones-6-unidades.jpg.webp"
+    ]
   },
   {
     "id": "vestuario/plancha",
