@@ -25,19 +25,64 @@ const parseFileMetadata = fileName => {
   if (!fileName) return { gender: null, size: null, color: null, type: null };
   return parseMetadataFromText(fileName);
 };
+const buildProductEntry = ({ categoryName, folderName, productName, description, daily, weekly, activationFee, images, directImageName = false }) => {
+  const sourceName = directImageName ? directImageName : `${folderName} ${productName || ''}`;
+  const metadata = parseFileMetadata(sourceName);
+  const derivedCategory = categoryName === 'vestuario' && metadata.gender ? metadata.gender : categoryName;
+  const derivedCategoryLabel = settingsById.get(derivedCategory)?.nombre || settingsById.get(categoryName)?.nombre || categoryName;
+  const baseTitle = productName || folderName || directImageName || 'Producto';
+  const normalizedName = baseTitle.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return {
+    id: `${derivedCategory}/${folderName}`,
+    category: derivedCategory,
+    categoryLabel: derivedCategoryLabel,
+    slug: folderName,
+    name: normalizedName,
+    description: description || 'Prenda disponible para alquiler y producción.',
+    daily: Number(daily || 0),
+    weekly: Number(weekly || 0),
+    activationFee: Number(activationFee || 0),
+    includes: '',
+    gender: metadata.gender ? metadata.gender.replace('ropa-', '') : null,
+    type: metadata.type || null,
+    size: metadata.size || null,
+    color: metadata.color || null,
+    images: images.map(file => relative(process.cwd(), file).replaceAll('\\', '/'))
+  };
+};
 const categories = (await readdir(root, { withFileTypes: true }))
   .filter(entry => entry.isDirectory())
   .sort((a, b) => (settingsById.get(a.name)?.orden ?? 999) - (settingsById.get(b.name)?.orden ?? 999));
 const products = [];
 for (const category of categories) {
   const categoryPath = join(root, category.name);
-  const folders = await readdir(categoryPath, { withFileTypes: true });
-  for (const folder of folders.filter(entry => entry.isDirectory())) {
+  const files = await readdir(categoryPath);
+  const directImages = files.filter(file => imageExtensions.has(file.slice(file.lastIndexOf('.')).toLowerCase()));
+  const folders = (await readdir(categoryPath, { withFileTypes: true })).filter(entry => entry.isDirectory());
+
+  for (const imageFile of directImages) {
+    const imagePath = join(categoryPath, imageFile);
+    const directSlug = imageFile.replace(/\.[^.]+$/, '').replaceAll(' ', '-');
+    const autoProduct = buildProductEntry({
+      categoryName: category.name,
+      folderName: directSlug,
+      productName: imageFile.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '),
+      description: 'Producto agregado automáticamente desde la carpeta de categoría.',
+      daily: 0,
+      weekly: 0,
+      activationFee: 0,
+      images: [imagePath],
+      directImageName: imageFile
+    });
+    products.push(autoProduct);
+  }
+
+  for (const folder of folders) {
     const productPath = join(categoryPath, folder.name);
-    const files = await readdir(productPath);
-    if (!files.includes('producto.json')) continue;
+    const productFiles = await readdir(productPath);
+    if (!productFiles.includes('producto.json')) continue;
     const fields = JSON.parse(await readFile(join(productPath, 'producto.json'), 'utf8'));
-    const images = files.filter(file => imageExtensions.has(file.slice(file.lastIndexOf('.')).toLowerCase()));
+    const images = productFiles.filter(file => imageExtensions.has(file.slice(file.lastIndexOf('.')).toLowerCase()));
     const firstImage = images[0] || '';
     const metadataSource = firstImage || `${folder.name} ${fields.nombre || ''}`;
     const fileMetadata = parseFileMetadata(metadataSource);

@@ -1037,6 +1037,42 @@
     "images": []
   },
   {
+    "id": "ropa-nino/camisa-nino-6-amarillo",
+    "category": "ropa-nino",
+    "categoryLabel": "Ropa de niño",
+    "slug": "camisa-nino-6-amarillo",
+    "name": "Camisa niño 6 amarillo",
+    "description": "Camisa de niño en amarillo, ideal para producciones y styling infantil.",
+    "daily": 18,
+    "weekly": 62,
+    "activationFee": 0,
+    "includes": "",
+    "gender": "nino",
+    "type": "camisa",
+    "size": "6",
+    "color": "amarillo",
+    "images": [
+      "catalogo/ropa-nino/camisa-nino-6-amarillo/camisa-nino-6-amarillo.jpg"
+    ]
+  },
+  {
+    "id": "ropa-nino/camisa-nino-m-azul",
+    "category": "ropa-nino",
+    "categoryLabel": "Ropa de niño",
+    "slug": "camisa-nino-m-azul",
+    "name": "Camisa niño M azul",
+    "description": "Camisa de niño en azul, ideal para clima casual y producción de vestuario.",
+    "daily": 18,
+    "weekly": 62,
+    "activationFee": 0,
+    "includes": "",
+    "gender": "nino",
+    "type": "camisa",
+    "size": "m",
+    "color": "azul",
+    "images": []
+  },
+  {
     "id": "ropa-nino/camisa-nino-s-blanco",
     "category": "ropa-nino",
     "categoryLabel": "Ropa de niño",
