@@ -15,7 +15,7 @@
   object-fit: contain;
   object-position: center;
   background: transparent;
-  padding: 10px;
+  padding: 0;
   box-sizing: border-box;
   transition: transform 0.2s ease;
 }
@@ -27,6 +27,33 @@
   padding: 12px;
 }
 .product-card:hover .product-visual img { transform: scale(1.02); }
+
+.product-category { display: none; }
+.product-card:has(.product-visual img) .product-visual {
+  background: #fff;
+}
+.product-card.product-card[data-product-id="electricidad-y-luces/extensiones-de-corriente"] .product-visual {
+  background: #dedbd8;
+}
+.product-card.product-card[data-product-id="comunicacion/radios-con-headset"] .product-visual {
+  background: #090a09;
+}
+.product-card.product-card[data-product-id="utileria/camaras-de-video-vintage"] .product-visual {
+  background: #e5e5e5;
+}
+.product-card:is(
+  [data-product-id="mobiliario/set-camerino"],
+  [data-product-id="mobiliario/sillas-de-direccion"],
+  [data-product-id="mobiliario/espejos-maquillaje-chicos"],
+  [data-product-id="mobiliario/espejos-maquillaje-grandes"],
+  [data-product-id="mobiliario/sillas-de-direccion-bajas"],
+  [data-product-id^="toldas/"],
+  [data-product-id="muebles-para-decoracion/sillas-de-madera"],
+  [data-product-id="muebles-para-decoracion/set-de-reposeras-de-playa"],
+  [data-product-id="muebles-para-decoracion/poltronas-de-playa"]
+) .product-visual img {
+  object-fit: cover;
+}
 
 .controls input { width: 45px; background: #242426; border: 1px solid #4b4b4c; color: #fff; padding: 5px; font-size: 11px; }
 

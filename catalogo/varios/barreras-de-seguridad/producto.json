@@ -1,6 +1,6 @@
 {
   "nombre": "Barreras de seguridad",
   "descripcion": "Barreras para control de flujo y seguridad en locaciones.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 10,
+  "precioSemanal": 40
 }

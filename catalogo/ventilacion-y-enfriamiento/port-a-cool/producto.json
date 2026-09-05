@@ -1,6 +1,6 @@
 {
   "nombre": "Port-a-cool",
   "descripcion": "Equipo portátil de enfriamiento para espacios de trabajo y producción.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 75,
+  "precioSemanal": 300
 }

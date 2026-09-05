@@ -1,6 +1,6 @@
 {
   "nombre": "Bancos apilables",
   "descripcion": "Bancos ligeros y fáciles de distribuir.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 0.5,
+  "precioSemanal": 2
 }

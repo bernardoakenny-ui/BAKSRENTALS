@@ -3,8 +3,9 @@ const drawer = document.querySelector('#quote-drawer');
 const overlay = document.querySelector('#overlay');
 const quoteDialog = document.querySelector('#quote-form-dialog');
 let catalog = [];
-let activeCategory = 'all';
-let activeCatalogMode = 'produccion';
+const savedCatalogView = JSON.parse(localStorage.getItem('baks-catalog-view') || '{}');
+let activeCategory = savedCatalogView.category || 'all';
+let activeCatalogMode = savedCatalogView.mode || 'produccion';
 let activeFilters = { tipo: 'all', talla: 'all', color: 'all' };
 let cart = JSON.parse(localStorage.getItem('baks-cart') || '[]').map(item => ({ ...item, duration: Number(item.duration) || 1 }));
 const catalogModes = {
@@ -13,6 +14,13 @@ const catalogModes = {
   vestuario: { label: 'Vestuario', categories: ['vestuario', 'ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina', 'cajas-plasticas'] }
 };
 const clothingCategories = new Set(['ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina']);
+const persistCatalogView = () => localStorage.setItem('baks-catalog-view', JSON.stringify({ mode: activeCatalogMode, category: activeCategory }));
+const restoreScrollPosition = () => {
+  const savedScrollY = Number(sessionStorage.getItem('baks-scroll-y'));
+  if (Number.isFinite(savedScrollY)) requestAnimationFrame(() => window.scrollTo(0, savedScrollY));
+};
+window.addEventListener('scroll', () => sessionStorage.setItem('baks-scroll-y', String(window.scrollY)), { passive: true });
+window.addEventListener('beforeunload', () => sessionStorage.setItem('baks-scroll-y', String(window.scrollY)));
 const getModeCatalog = () => {
   const categories = catalogModes[activeCatalogMode]?.categories || [];
   if (!categories.length) return [];
@@ -99,13 +107,14 @@ function renderTabs(){ const modeProducts = getModeCatalog(); const categoryTabs
       <label><span>Tipo</span><select data-filter="tipo"><option value="all">Todos</option>${getFilterOptions(modeProducts, 'type').map(value => `<option value="${safe(value)}" ${activeFilters.tipo === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
       <label><span>Talla</span><select data-filter="talla"><option value="all">Todas</option>${getFilterOptions(modeProducts, 'size').map(value => `<option value="${safe(value)}" ${activeFilters.talla === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
       <label><span>Color</span><select data-filter="color"><option value="all">Todos</option>${getFilterOptions(modeProducts, 'color').map(value => `<option value="${safe(value)}" ${activeFilters.color === value ? 'selected' : ''}>${safe(value)}</option>`).join('')}</select></label>
-    ` : ''; categoryTabs.innerHTML = tabs.map(([id,label]) => `<button class="${activeCategory === id ? 'active' : ''}" data-category="${id}">${formatCategoryLabel(label)}</button>`).join(''); filterContainer.innerHTML = filterMarkup; document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { activeCategory = button.dataset.category; renderTabs(); renderProducts(); })); document.querySelectorAll('[data-filter]').forEach(select => select.addEventListener('change', () => { const key = select.dataset.filter; activeFilters[key] = normalizeFilterValue(select.value); renderProducts(); })); }
+    ` : ''; categoryTabs.innerHTML = tabs.map(([id,label]) => `<button class="${activeCategory === id ? 'active' : ''}" data-category="${id}">${formatCategoryLabel(label)}</button>`).join(''); filterContainer.innerHTML = filterMarkup; document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { activeCategory = button.dataset.category; persistCatalogView(); renderTabs(); renderProducts(); })); document.querySelectorAll('[data-filter]').forEach(select => select.addEventListener('change', () => { const key = select.dataset.filter; activeFilters[key] = normalizeFilterValue(select.value); renderProducts(); })); }
 function renderQuote(){ document.querySelector('#cart-count').textContent = cart.reduce((count,item) => count + item.quantity, 0); const groups = new Map(); cart.forEach(item => { const product = catalog.find(p => p.id === item.id); if (!product) return; if (!groups.has(product.category)) groups.set(product.category, { label: product.categoryLabel, products: [] }); groups.get(product.category).products.push({ product, item }); }); const content = document.querySelector('#quote-items'); if (!cart.length) content.innerHTML = '<p class="empty">Tu cotización está vacía.<br>Agrega productos desde el catálogo.</p>'; else content.innerHTML = [...groups.values()].map((group, index) => { const subtotal = group.products.reduce((n, {product,item}) => { const rate = item.period === 'weekly' ? product.weekly : product.daily; const activation = product.activationFee || 0; return n + (activation * item.quantity) + (rate * item.quantity * item.duration); }, 0); return `<details class="quote-group" ${index === 0 ? 'open' : ''}><summary>${safe(group.label)} <span>${group.products.reduce((n,row)=>n+row.item.quantity,0)} artículos · ${money.format(subtotal)}</span></summary>${group.products.map(({product,item}) => { const rate = item.period === 'weekly' ? product.weekly : product.daily; const activation = product.activationFee || 0; const lineTotal = (activation * item.quantity) + (rate * item.quantity * item.duration); return `<div class="quote-row"><div><h4>${safe(product.name)}</h4><p class="row-price">${activation ? `${money.format(activation)} activación + ` : ''}${rate ? `${money.format(rate)} × ${item.quantity} × ${item.duration} ${item.period === 'weekly' ? 'sem.' : 'día(s)'} = ${money.format(lineTotal)}` : 'Valor a confirmar'}</p><div class="controls"><button aria-label="Restar" data-action="minus" data-id="${safe(product.id)}">−</button><b>${item.quantity}</b><button aria-label="Sumar" data-action="plus" data-id="${safe(product.id)}">+</button><input min="1" value="${item.duration}" type="number" data-duration data-id="${safe(product.id)}"><select data-period data-id="${safe(product.id)}"><option value="daily" ${item.period === 'daily' ? 'selected' : ''}>día(s)</option><option value="weekly" ${item.period === 'weekly' ? 'selected' : ''}>semana(s)</option></select></div></div></div>`; }).join('')}</details>`; }).join(''); document.querySelector('#quote-total').textContent = money.format(totals()); content.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => updateCart(button.dataset.id, button.dataset.action === 'plus' ? 1 : -1))); content.querySelectorAll('[data-period]').forEach(select => select.addEventListener('change', () => updateCart(select.dataset.id, 0, select.value))); content.querySelectorAll('[data-duration]').forEach(input => input.addEventListener('change', () => updateCart(input.dataset.id, 0, null, input.value))); }
 function openQuote(){ drawer.classList.add('open'); overlay.classList.add('show'); } function closeQuote(){ drawer.classList.remove('open'); overlay.classList.remove('show'); }
 document.querySelectorAll('[data-open-quote]').forEach(button => button.addEventListener('click', openQuote)); document.querySelector('[data-close-quote]').addEventListener('click', closeQuote); overlay.addEventListener('click', closeQuote); document.querySelector('#open-form').addEventListener('click', () => { if (!cart.length) return; quoteDialog.showModal(); }); document.querySelector('.modal-close').addEventListener('click', () => quoteDialog.close());
 document.querySelectorAll('[data-catalog-mode]').forEach(button => button.addEventListener('click', () => {
   activeCatalogMode = button.dataset.catalogMode;
   activeCategory = 'all';
+  persistCatalogView();
   renderCatalogModeButtons();
   renderTabs();
   renderProducts();
@@ -118,4 +127,8 @@ const heroIndex = Number.isInteger(previousHero) && previousHero >= 0 && previou
 sessionStorage.setItem('baks-last-hero', heroIndex);
 const selectedHero = heroImages[heroIndex];
 hero.style.backgroundImage = `linear-gradient(125deg, #0008, #0002), url('${selectedHero}')`;
-catalog = globalThis.BAKS_CATALOG || []; renderCatalogModeButtons(); renderTabs(); renderProducts(); renderQuote();
+catalog = globalThis.BAKS_CATALOG || [];
+if (!catalogModes[activeCatalogMode]) activeCatalogMode = 'produccion';
+if (activeCategory !== 'all' && !catalogModes[activeCatalogMode].categories.includes(activeCategory)) activeCategory = 'all';
+persistCatalogView();
+renderCatalogModeButtons(); renderTabs(); renderProducts(); renderQuote(); restoreScrollPosition();

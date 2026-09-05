@@ -1,6 +1,6 @@
 {
   "nombre": "Megáfono",
   "descripcion": "Comunicación en espacios amplios y exteriores.",
-  "precioDiario": 10,
-  "precioSemanal": 40
+  "precioDiario": 5,
+  "precioSemanal": 20
 }

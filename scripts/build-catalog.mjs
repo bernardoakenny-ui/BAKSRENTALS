@@ -1,10 +1,19 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = join(process.cwd(), 'catalogo');
 const output = join(process.cwd(), 'catalogo.json');
 const browserOutput = join(process.cwd(), 'catalogo-data.js');
-const imageExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg']);
+const indexFile = join(process.cwd(), 'index.html');
+const versionedAssets = [
+  ['styles.css', join(process.cwd(), 'styles.css')],
+  ['desktop-catalog.css', join(process.cwd(), 'desktop-catalog.css')],
+  ['brand-assets.css', join(process.cwd(), 'brand-assets.css')],
+  ['app.js', join(process.cwd(), 'app.js')]
+];
+const excludedProducts = new Set(['articulos-de-oficina/escanner-portatil', 'articulos-de-oficina/impresora-portatil']);
+const imageExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif']);
 const categorySettings = JSON.parse(await readFile(join(root, 'categorias.json'), 'utf8'));
 const settingsById = new Map(categorySettings.map(category => [category.id, category]));
 const genderMap = { hombre: 'ropa-hombre', mujer: 'ropa-mujer', nino: 'ropa-nino', nina: 'ropa-nina' };
@@ -78,6 +87,7 @@ for (const category of categories) {
   }
 
   for (const folder of folders) {
+    if (excludedProducts.has(`${category.name}/${folder.name}`)) continue;
     const productPath = join(categoryPath, folder.name);
     const productFiles = await readdir(productPath);
     if (!productFiles.includes('producto.json')) continue;
@@ -108,5 +118,14 @@ for (const category of categories) {
   }
 }
 await writeFile(output, `${JSON.stringify(products, null, 2)}\n`);
-await writeFile(browserOutput, `// Archivo generado automáticamente. No editar.\nglobalThis.BAKS_CATALOG = ${JSON.stringify(products)};\n`);
+const browserContents = `// Archivo generado automáticamente. No editar.\nglobalThis.BAKS_CATALOG = ${JSON.stringify(products)};\n`;
+await writeFile(browserOutput, browserContents);
+const version = contents => createHash('sha256').update(contents).digest('hex').slice(0, 12);
+const catalogVersion = version(browserContents);
+const indexContents = await readFile(indexFile, 'utf8');
+let versionedIndex = indexContents.replace(/catalogo-data\.js\?v=[^\"]+/, `catalogo-data.js?v=${catalogVersion}`);
+for (const [assetName, assetPath] of versionedAssets) {
+  versionedIndex = versionedIndex.replace(new RegExp(`${assetName.replace('.', '\\.?')}\\?v=[^\"]+`), `${assetName}?v=${version(await readFile(assetPath))}`);
+}
+await writeFile(indexFile, versionedIndex);
 console.log(`Catálogo actualizado: ${products.length} productos.`);

@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node scripts/build-catalog.mjs",
     "build:catalog": "node scripts/build-catalog.mjs"
   }
 }

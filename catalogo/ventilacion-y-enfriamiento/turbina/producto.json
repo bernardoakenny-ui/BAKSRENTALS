@@ -1,6 +1,6 @@
 {
   "nombre": "Turbina",
   "descripcion": "Turbina para extracción y circulación de aire en locaciones y sets de producción.",
-  "precioDiario": 25,
-  "precioSemanal": 100
+  "precioDiario": 10,
+  "precioSemanal": 40
 }

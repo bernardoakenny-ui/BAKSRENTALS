@@ -6,8 +6,8 @@
     "slug": "bancos-apilables",
     "name": "Bancos apilables",
     "description": "Bancos ligeros y fáciles de distribuir.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 0.5,
+    "weekly": 2,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -25,8 +25,8 @@
     "slug": "espejos-maquillaje-chicos",
     "name": "Espejos de maquillaje chicos",
     "description": "Espejos compactos para maquillaje y retoques.",
-    "daily": 15,
-    "weekly": 60,
+    "daily": 20,
+    "weekly": 80,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -44,8 +44,8 @@
     "slug": "espejos-maquillaje-grandes",
     "name": "Espejos de maquillaje grandes",
     "description": "Espejos para estaciones de maquillaje.",
-    "daily": 25,
-    "weekly": 100,
+    "daily": 40,
+    "weekly": 160,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -82,8 +82,8 @@
     "slug": "set-camerino",
     "name": "Set Camerino",
     "description": "Set de camerino para producción y presentación.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 75,
+    "weekly": 300,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -103,8 +103,8 @@
     "slug": "sillas-de-direccion",
     "name": "Sillas de dirección",
     "description": "Sillas para dirección, talentos y equipo de producción.",
-    "daily": 20,
-    "weekly": 80,
+    "daily": 25,
+    "weekly": 100,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -122,8 +122,8 @@
     "slug": "sillas-de-direccion-bajas",
     "name": "Sillas de dirección bajas",
     "description": "Sillas bajas para áreas de producción.",
-    "daily": 10,
-    "weekly": 40,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -160,8 +160,8 @@
     "slug": "sillas-tela-negra-bajas",
     "name": "Sillas de tela negra bajas",
     "description": "Sillas bajas de tela negra para talentos y equipo.",
-    "daily": 5,
-    "weekly": 20,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -173,38 +173,42 @@
     ]
   },
   {
-    "id": "articulos-de-oficina/escanner-portatil",
+    "id": "articulos-de-oficina/plastificadora",
     "category": "articulos-de-oficina",
     "categoryLabel": "Artículos de oficina",
-    "slug": "escanner-portatil",
-    "name": "Escáner portátil",
-    "description": "Escáner portátil para digitalización de documentos y gestión de producción en campo.",
-    "daily": 12,
-    "weekly": 45,
+    "slug": "plastificadora",
+    "name": "Plastificadora",
+    "description": "Plastificadora para proteger documentos, identificaciones y materiales de producción.",
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/articulos-de-oficina/plastificadora/61H+qS9LnpL.jpg"
+    ]
   },
   {
-    "id": "articulos-de-oficina/impresora-portatil",
+    "id": "articulos-de-oficina/tableros",
     "category": "articulos-de-oficina",
     "categoryLabel": "Artículos de oficina",
-    "slug": "impresora-portatil",
-    "name": "Impresora portátil",
-    "description": "Impresora portátil para documentos, producción y gestión de oficinas en locación.",
-    "daily": 12,
-    "weekly": 45,
+    "slug": "tableros",
+    "name": "Tableros",
+    "description": "Tableros para organizar información, referencias y necesidades de producción en oficina o locación.",
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/articulos-de-oficina/tableros/images.jpeg"
+    ]
   },
   {
     "id": "cajas-plasticas/caja-plastica-grande",
@@ -213,8 +217,8 @@
     "slug": "caja-plastica-grande",
     "name": "Caja plástica grande",
     "description": "Caja plástica grande para almacenamiento, transporte y organización de materiales de producción, arte y vestuario.",
-    "daily": 12,
-    "weekly": 45,
+    "daily": 3,
+    "weekly": 12,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -232,8 +236,8 @@
     "slug": "bancas-de-jardin",
     "name": "Bancas de jardín",
     "description": "Bancas de jardín para exteriores, ambientación y decoración de eventos.",
-    "daily": 12,
-    "weekly": 48,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -251,8 +255,8 @@
     "slug": "mesa-utilitaria-tipo-bar",
     "name": "Mesa utilitaria tipo bar",
     "description": "Mesa utilitaria tipo bar para decoración, catering y ambientación de eventos.",
-    "daily": 18,
-    "weekly": 72,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -270,8 +274,8 @@
     "slug": "poltronas-de-playa",
     "name": "Poltronas de playa",
     "description": "Poltronas de playa para exteriores, lounge y decoraciones de eventos.",
-    "daily": 10,
-    "weekly": 40,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -289,8 +293,8 @@
     "slug": "set-de-mesas-y-sillas-de-cafeteria",
     "name": "Set de mesas y sillas de cafeteria",
     "description": "Set de mesas y sillas de cafeteria para ambientacion de eventos, sets y producciones audiovisuales.",
-    "daily": 10,
-    "weekly": 40,
+    "daily": 30,
+    "weekly": 120,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -346,8 +350,8 @@
     "slug": "tolda-negra-3x3",
     "name": "Tolda negra 3x3 m",
     "description": "Tolda plegable negra para sombra y estaciones de producción.",
-    "daily": 25,
-    "weekly": 100,
+    "daily": 35,
+    "weekly": 140,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -364,7 +368,7 @@
     "name": "Tolda negra 3x3 m con paredes",
     "description": "Tolda plegable negra con paredes laterales para mayor privacidad y protección.",
     "daily": 50,
-    "weekly": 0,
+    "weekly": 200,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -382,8 +386,8 @@
     "slug": "tolda-negra-3x6-estructura-tubular",
     "name": "Tolda negra 3x6 - estructura tubular",
     "description": "Tolda de 3x6 metros con estructura tubular para sombra, cobertura y montaje profesional en producciones y eventos.",
-    "daily": 45,
-    "weekly": 180,
+    "daily": 50,
+    "weekly": 200,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -416,8 +420,8 @@
     "slug": "tolda-negra-6x3-con-paredes",
     "name": "Tolda negra 6x3 m con paredes",
     "description": "Cobertura amplia con paredes laterales para producción.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 75,
+    "weekly": 300,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -444,8 +448,10 @@
     "gender": null,
     "type": null,
     "size": null,
-    "color": null,
-    "images": []
+    "color": "blanco",
+    "images": [
+      "catalogo/ventilacion-y-enfriamiento/aire-acondicionado-portatil/Comprar_al_mejor_precio_Aire_acondicionado_portatil_Hisense_APC09QC_blanco-2.webp"
+    ]
   },
   {
     "id": "ventilacion-y-enfriamiento/port-a-cool",
@@ -454,8 +460,8 @@
     "slug": "port-a-cool",
     "name": "Port-a-cool",
     "description": "Equipo portátil de enfriamiento para espacios de trabajo y producción.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 75,
+    "weekly": 300,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -473,15 +479,17 @@
     "slug": "turbina",
     "name": "Turbina",
     "description": "Turbina para extracción y circulación de aire en locaciones y sets de producción.",
-    "daily": 25,
-    "weekly": 100,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/ventilacion-y-enfriamiento/turbina/Master-BLM-4800-main-right-web.jpg"
+    ]
   },
   {
     "id": "ventilacion-y-enfriamiento/ventilador-industrial de pedestal",
@@ -528,8 +536,8 @@
     "slug": "ventiladores",
     "name": "Ventilador",
     "description": "Ventilador para enfriamiento y circulación de aire en locaciones.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -555,7 +563,9 @@
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/electricidad-y-luces/extensiones-de-corriente/exec-05cea474-24c3-4ad2-a588-9f1c6e655dc9.png"
+    ]
   },
   {
     "id": "electricidad-y-luces/generador-3kva",
@@ -572,7 +582,9 @@
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/electricidad-y-luces/generador-3kva/producto-eu30is-02-copia.webp"
+    ]
   },
   {
     "id": "electricidad-y-luces/generador-7kva",
@@ -589,7 +601,9 @@
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/electricidad-y-luces/generador-7kva/images.jpeg"
+    ]
   },
   {
     "id": "electricidad-y-luces/luces-aputure-mc-x12",
@@ -598,15 +612,17 @@
     "slug": "luces-aputure-mc-x12",
     "name": "Luces Aputure MC x12",
     "description": "Kit de luces Aputure MC para necesidades de producción.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 100,
+    "weekly": 400,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "12",
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/electricidad-y-luces/luces-aputure-mc-x12/MC-12-Light-kit.webp"
+    ]
   },
   {
     "id": "electricidad-y-luces/luces-de-trabajo",
@@ -638,9 +654,11 @@
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "12",
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/comunicacion/headsets-camarografos/05-12-202317017950858s.jpg"
+    ]
   },
   {
     "id": "comunicacion/megafono",
@@ -649,15 +667,17 @@
     "slug": "megafono",
     "name": "Megáfono",
     "description": "Comunicación en espacios amplios y exteriores.",
-    "daily": 10,
-    "weekly": 40,
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/comunicacion/megafono/Handheld-Portable-Wireless-ABS-50W-Big-Sound-Rechargeable-Talk-Siren-Megaphone-Loudspeaker-for-Outdoor.avif"
+    ]
   },
   {
     "id": "comunicacion/radios-con-headset",
@@ -666,15 +686,17 @@
     "slug": "radios-con-headset",
     "name": "Radios de comunicación con headset",
     "description": "Comunicación interna para coordinación de producción.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/comunicacion/radios-con-headset/Codex Image Sep 2, 2026, 08_26_06 PM.png"
+    ]
   },
   {
     "id": "comunicacion/sistema-monitoreo-audio",
@@ -683,15 +705,17 @@
     "slug": "sistema-monitoreo-audio",
     "name": "Sistema de monitoreo de audio",
     "description": "Sistema de apoyo para monitoreo y coordinación de audio.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 40,
+    "weekly": 160,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "m",
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/comunicacion/sistema-monitoreo-audio/m-vave-wp-10-in-ear-monitor-system-kz-music-store-10.webp"
+    ]
   },
   {
     "id": "comunicacion/stalink",
@@ -708,7 +732,9 @@
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/comunicacion/stalink/654d3c4c9abeb565732bf994-starlink-v2-satellite-dish-kit-with.jpg"
+    ]
   },
   {
     "id": "utileria/camaras-de-video-vintage",
@@ -717,8 +743,8 @@
     "slug": "camaras-de-video-vintage",
     "name": "Cámaras de video vintage años '80",
     "description": "Cámaras analógicas y vintage para estética retro, proyectos cinematográficos y referencias visuales de época.",
-    "daily": 25,
-    "weekly": 100,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -736,8 +762,8 @@
     "slug": "mararas-de-videos-vintage-anos-60",
     "name": "Mararas de videos vintage años '60",
     "description": "Mararas y equipos de video vintage de la década de los 60 para estética retro, referencias históricas y producciones con estilo clásico.",
-    "daily": 95,
-    "weekly": 380,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -755,8 +781,8 @@
     "slug": "barreras-de-seguridad",
     "name": "Barreras de seguridad",
     "description": "Barreras para control de flujo y seguridad en locaciones.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -774,15 +800,17 @@
     "slug": "cafetera-30-tazas",
     "name": "Cafetera de 30 tazas",
     "description": "Cafetera industrial para servicio de café en producciones, sets y eventos con alta demanda de consumo.",
-    "daily": 45,
-    "weekly": 180,
+    "daily": 5,
+    "weekly": 20,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/cafetera-30-tazas/421dc33901_ustxfmqbba94cvgc.webp"
+    ]
   },
   {
     "id": "varios/cafetera-nespresso",
@@ -791,15 +819,17 @@
     "slug": "cafetera-nespresso",
     "name": "Cafetera Nespresso",
     "description": "Cafetera compacta para servicio rápido y cómodo durante producciones, reuniones y oficinas de trabajo.",
-    "daily": 25,
-    "weekly": 100,
+    "daily": 15,
+    "weekly": 60,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/cafetera-nespresso/essenza-content.png"
+    ]
   },
   {
     "id": "varios/carretilla",
@@ -808,8 +838,8 @@
     "slug": "carretilla",
     "name": "Carretilla",
     "description": "Carretilla de apoyo para carga y movimiento de equipo.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -827,8 +857,8 @@
     "slug": "carretilla-utilitaria",
     "name": "Carretilla utilitaria",
     "description": "Carretilla utilitaria para transporte de materiales y equipo.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -846,15 +876,17 @@
     "slug": "cestos-de-basura",
     "name": "Cestos de basura",
     "description": "Cestos para mantener ordenadas las áreas de producción.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 3,
+    "weekly": 12,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
-    "size": null,
+    "size": "10",
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/cestos-de-basura/Wholesale-Heavy-Duty-10-20-32-44-55-Gallon-Round-America-Style-HDPE-Plastic-Eco-Friendly-Trash-Bins-for-USA-Market.png_300x300.avif"
+    ]
   },
   {
     "id": "varios/conos",
@@ -863,8 +895,8 @@
     "slug": "conos",
     "name": "Conos",
     "description": "Conos para demarcación y control de tránsito en locación.",
-    "daily": 0,
-    "weekly": 0,
+    "daily": 3,
+    "weekly": 12,
     "activationFee": 0,
     "includes": "",
     "gender": null,
@@ -890,7 +922,9 @@
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/cooler/103i325871_ly3wb04x4fwwkthy.webp"
+    ]
   },
   {
     "id": "varios/dispensador-de-agua",
@@ -899,15 +933,17 @@
     "slug": "dispensador-de-agua",
     "name": "Dispensador de agua",
     "description": "Dispensador para agua fría y caliente para equipos de producción, oficinas móviles y áreas de catering.",
-    "daily": 30,
-    "weekly": 120,
+    "daily": 10,
+    "weekly": 40,
     "activationFee": 0,
     "includes": "",
     "gender": null,
     "type": null,
     "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/dispensador-de-agua/500fqf20c3musw1_rnkk2ibnpiy3zv5y.webp"
+    ]
   },
   {
     "id": "varios/escalera-16-pies",
@@ -922,9 +958,11 @@
     "includes": "",
     "gender": null,
     "type": null,
-    "size": "16",
+    "size": null,
     "color": null,
-    "images": []
+    "images": [
+      "catalogo/varios/escalera-16-pies/images.jpeg"
+    ]
   },
   {
     "id": "vestuario/ganchos-de-ropa",
@@ -1009,8 +1047,8 @@
     "slug": "camisa-hombre-m-azul",
     "name": "Camisa hombre M azul",
     "description": "Prenda de ropa para hombre, ideal para personajes y producción de vestuario.",
-    "daily": 18,
-    "weekly": 65,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "hombre",
@@ -1026,8 +1064,8 @@
     "slug": "pantalon-mujer-l-negro",
     "name": "Pantalón mujer L negro",
     "description": "Pantalón para mujer en negro, apto para producción y wardrobe.",
-    "daily": 20,
-    "weekly": 70,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "mujer",
@@ -1043,8 +1081,8 @@
     "slug": "camisa-nino-6-amarillo",
     "name": "Camisa niño 6 amarillo",
     "description": "Camisa de niño en amarillo, ideal para producciones y styling infantil.",
-    "daily": 18,
-    "weekly": 62,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "nino",
@@ -1062,8 +1100,8 @@
     "slug": "camisa-nino-m-azul",
     "name": "Camisa niño M azul",
     "description": "Camisa de niño en azul, ideal para clima casual y producción de vestuario.",
-    "daily": 18,
-    "weekly": 62,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "nino",
@@ -1079,8 +1117,8 @@
     "slug": "camisa-nino-s-blanco",
     "name": "Camisa niño S blanco",
     "description": "Prenda de vestir para niño en blanco, ideal para uso de personaje o producción.",
-    "daily": 16,
-    "weekly": 58,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "nino",
@@ -1096,8 +1134,8 @@
     "slug": "falda-nina-xs-rosa",
     "name": "Falda niña XS rosa",
     "description": "Falda para niña en rosa, ideal para styling y vestuario de producción.",
-    "daily": 17,
-    "weekly": 60,
+    "daily": 2,
+    "weekly": 8,
     "activationFee": 0,
     "includes": "",
     "gender": "nina",

@@ -1,6 +1,6 @@
 {
   "nombre": "Conos",
   "descripcion": "Conos para demarcación y control de tránsito en locación.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 3,
+  "precioSemanal": 12
 }

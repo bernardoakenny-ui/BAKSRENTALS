@@ -1,6 +1,6 @@
 {
   "nombre": "Carretilla utilitaria",
   "descripcion": "Carretilla utilitaria para transporte de materiales y equipo.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 10,
+  "precioSemanal": 40
 }

@@ -1,6 +1,6 @@
 {
   "nombre": "Radios de comunicación con headset",
   "descripcion": "Comunicación interna para coordinación de producción.",
-  "precioDiario": 0,
-  "precioSemanal": 0
+  "precioDiario": 5,
+  "precioSemanal": 20
 }
