@@ -568,44 +568,6 @@
     ]
   },
   {
-    "id": "electricidad-y-luces/generador-3kva",
-    "category": "electricidad-y-luces",
-    "categoryLabel": "Electricidad y luces",
-    "slug": "generador-3kva",
-    "name": "Generador de 3 KVA",
-    "description": "Generador portátil para necesidades eléctricas ligeras.",
-    "daily": 0,
-    "weekly": 0,
-    "activationFee": 0,
-    "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
-    "images": [
-      "catalogo/electricidad-y-luces/generador-3kva/producto-eu30is-02-copia.webp"
-    ]
-  },
-  {
-    "id": "electricidad-y-luces/generador-7kva",
-    "category": "electricidad-y-luces",
-    "categoryLabel": "Electricidad y luces",
-    "slug": "generador-7kva",
-    "name": "Generador de 7 KVA",
-    "description": "Generador portátil para respaldo de energía en locación.",
-    "daily": 0,
-    "weekly": 0,
-    "activationFee": 0,
-    "includes": "",
-    "gender": null,
-    "type": null,
-    "size": null,
-    "color": null,
-    "images": [
-      "catalogo/electricidad-y-luces/generador-7kva/images.jpeg"
-    ]
-  },
-  {
     "id": "electricidad-y-luces/luces-aputure-mc-x12",
     "category": "electricidad-y-luces",
     "categoryLabel": "Electricidad y luces",

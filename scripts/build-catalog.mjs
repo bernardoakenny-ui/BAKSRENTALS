@@ -12,7 +12,12 @@ const versionedAssets = [
   ['brand-assets.css', join(process.cwd(), 'brand-assets.css')],
   ['app.js', join(process.cwd(), 'app.js')]
 ];
-const excludedProducts = new Set(['articulos-de-oficina/escanner-portatil', 'articulos-de-oficina/impresora-portatil']);
+const excludedProducts = new Set([
+  'articulos-de-oficina/escanner-portatil',
+  'articulos-de-oficina/impresora-portatil',
+  'electricidad-y-luces/generador-3kva',
+  'electricidad-y-luces/generador-7kva'
+]);
 const imageExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif']);
 const categorySettings = JSON.parse(await readFile(join(root, 'categorias.json'), 'utf8'));
 const settingsById = new Map(categorySettings.map(category => [category.id, category]));

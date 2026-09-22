@@ -3,6 +3,8 @@ const drawer = document.querySelector('#quote-drawer');
 const overlay = document.querySelector('#overlay');
 const quoteDialog = document.querySelector('#quote-form-dialog');
 let catalog = [];
+let allCatalog = [];
+let catalogSearch = '';
 const savedCatalogView = JSON.parse(localStorage.getItem('baks-catalog-view') || '{}');
 let activeCategory = savedCatalogView.category || 'all';
 let activeCatalogMode = savedCatalogView.mode || 'produccion';
@@ -11,7 +13,7 @@ let cart = JSON.parse(localStorage.getItem('baks-cart') || '[]').map(item => ({ 
 const catalogModes = {
   produccion: { label: 'Producción', categories: ['mobiliario', 'articulos-de-oficina', 'cajas-plasticas', 'toldas', 'ventilacion-y-enfriamiento', 'electricidad-y-luces', 'comunicacion', 'varios'] },
   arte: { label: 'Arte', categories: ['muebles-para-decoracion', 'utileria', 'cajas-plasticas'] },
-  vestuario: { label: 'Vestuario', categories: ['vestuario', 'ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina', 'cajas-plasticas'] }
+  vestuario: { label: 'Vestuario', categories: ['vestuario', 'cajas-plasticas'] }
 };
 const clothingCategories = new Set(['ropa-hombre', 'ropa-mujer', 'ropa-nino', 'ropa-nina']);
 const persistCatalogView = () => localStorage.setItem('baks-catalog-view', JSON.stringify({ mode: activeCatalogMode, category: activeCategory }));
@@ -22,7 +24,7 @@ const restoreScrollPosition = () => {
 window.addEventListener('scroll', () => sessionStorage.setItem('baks-scroll-y', String(window.scrollY)), { passive: true });
 window.addEventListener('beforeunload', () => sessionStorage.setItem('baks-scroll-y', String(window.scrollY)));
 const getModeCatalog = () => {
-  const categories = catalogModes[activeCatalogMode]?.categories || [];
+  const categories = catalogSearch ? [...new Set(catalog.map(product => product.category))] : catalogModes[activeCatalogMode]?.categories || [];
   if (!categories.length) return [];
   const categoryOrder = new Map(categories.map((categoryId, index) => [categoryId, index]));
   return catalog
@@ -37,6 +39,8 @@ const matchesFilters = product => {
   return matchesTipo && matchesTalla && matchesColor;
 };
 const normalizeFilterValue = value => String(value || '').toLowerCase().replace(/\s+/g, '-');
+const normalizeSearch = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+const matchesSearch = (product, query) => !query || normalizeSearch([product.name, product.description, product.categoryLabel].join(' ')).includes(query);
 const getFilterOptions = (products, key) => {
   const values = new Set(products.map(product => product[key]).filter(Boolean));
   return [...values].sort();
@@ -119,7 +123,7 @@ document.querySelectorAll('[data-catalog-mode]').forEach(button => button.addEve
   renderTabs();
   renderProducts();
 }));
-document.querySelector('#quote-form').addEventListener('submit', async event => { event.preventDefault(); const form = event.currentTarget; const status = document.querySelector('#form-status'); const payload = { customer: Object.fromEntries(new FormData(form)), items: cart.map(item => ({ ...item, product: catalog.find(product => product.id === item.id) })), total: totals() }; status.textContent = 'Enviando solicitud…'; try { const response = await fetch('/.netlify/functions/send-quote', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); if (!response.ok) throw new Error(); cart = []; persist(); form.reset(); status.textContent = 'Solicitud enviada. Revisa tu correo para ver el resumen.'; } catch { status.textContent = 'No pudimos enviar la solicitud. Intenta de nuevo o contáctanos directamente.'; } });
+document.querySelector('#quote-form').addEventListener('submit', async event => { event.preventDefault(); const form = event.currentTarget; const status = document.querySelector('#form-status'); const submitButton = form.querySelector('[type="submit"]'); const payload = { customer: Object.fromEntries(new FormData(form)), items: cart.map(item => ({ ...item, product: catalog.find(product => product.id === item.id) })), total: totals() }; status.textContent = 'Enviando solicitud…'; submitButton.disabled = true; try { const response = await fetch('/.netlify/functions/send-quote', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); if (!response.ok) { const body = await response.text(); let reason = body; try { const details = JSON.parse(body); reason = details.provider || details.error || body; } catch {} throw new Error(reason || `Error ${response.status}`); } cart = []; persist(); form.reset(); status.textContent = 'Solicitud enviada. Revisa tu correo para ver el resumen.'; } catch (error) { status.textContent = error.message === 'Email service is not configured.' ? 'Falta configurar el correo en Netlify.' : error.message.includes('Could not send email') ? 'Resend rechazó el envío. Verifica el dominio y QUOTE_FROM en Netlify.' : error.message.startsWith('{') ? 'Resend rechazó el envío. Revisa la configuración del dominio.' : 'No pudimos enviar la solicitud. Intenta de nuevo o contáctanos directamente.'; } finally { submitButton.disabled = false; } });
 const heroImages = ['assets/hero-production-basecamp.png', 'assets/production-studio-support.png'];
 const hero = document.querySelector('.hero-image');
 const previousHero = Number(sessionStorage.getItem('baks-last-hero'));
@@ -128,6 +132,23 @@ sessionStorage.setItem('baks-last-hero', heroIndex);
 const selectedHero = heroImages[heroIndex];
 hero.style.backgroundImage = `linear-gradient(125deg, #0008, #0002), url('${selectedHero}')`;
 catalog = globalThis.BAKS_CATALOG || [];
+allCatalog = catalog;
+const catalogSearchInput = document.querySelector('#catalog-search');
+const clearCatalogSearch = document.querySelector('#clear-catalog-search');
+const updateCatalogSearch = value => {
+  catalogSearch = normalizeSearch(value);
+  catalog = catalogSearch ? allCatalog.filter(product => matchesSearch(product, catalogSearch)) : allCatalog;
+  activeCategory = 'all';
+  persistCatalogView();
+  renderTabs();
+  renderProducts();
+};
+catalogSearchInput.addEventListener('input', event => updateCatalogSearch(event.target.value));
+clearCatalogSearch.addEventListener('click', () => {
+  catalogSearchInput.value = '';
+  updateCatalogSearch('');
+  catalogSearchInput.focus();
+});
 if (!catalogModes[activeCatalogMode]) activeCatalogMode = 'produccion';
 if (activeCategory !== 'all' && !catalogModes[activeCatalogMode].categories.includes(activeCategory)) activeCategory = 'all';
 persistCatalogView();
