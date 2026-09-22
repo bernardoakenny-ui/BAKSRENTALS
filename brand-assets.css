@@ -9,3 +9,4 @@
 .catalog-search input::placeholder { color: #858480; }
 .catalog-search button { position: absolute; top: 50%; right: 8px; width: 30px; height: 30px; transform: translateY(-50%); border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; font-size: 20px; line-height: 1; }
 .catalog-search button:hover { background: var(--soft); color: var(--white); }
+dialog { max-height: calc(100dvh - 30px); overflow-y: auto; }
